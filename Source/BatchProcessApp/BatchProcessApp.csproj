@@ -1,19 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5DED7800-5F14-4EF6-96AA-17C2599F0398}</ProjectGuid>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BatchProcessApp</RootNamespace>
     <AssemblyName>ScriptPro</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
     <ApplicationIcon>cog.ico</ApplicationIcon>
     <NoWin32Manifest>true</NoWin32Manifest>
     <PublishUrl>publish\</PublishUrl>
@@ -31,130 +20,52 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <StartupObject>BatchProcessApp.App</StartupObject>
+    <PlatformTarget>x64</PlatformTarget>
+    <AssemblyVersion>3.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RibbonControlsLibrary, Version=3.5.40729.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="WindowsBase">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsFormsIntegration">
+    <Compile Remove="MainWindow.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Images\add.png" />
+    <None Remove="Images\checked-unchecked.png" />
+    <None Remove="Images\cog.png" />
+    <None Remove="Images\delete.png" />
+    <None Remove="Images\folder_add.png" />
+    <None Remove="Images\help.png" />
+    <None Remove="Images\magic_wand_2.png" />
+    <None Remove="Images\script-add.png" />
+    <None Remove="Images\script-go-checked.png" />
+    <None Remove="Images\script-go-failed.png" />
+    <None Remove="Images\script-go-selected.png" />
+    <None Remove="Images\script-new.png" />
+    <None Remove="Images\script-save.png" />
+    <None Remove="Images\smallcog.png" />
+    <None Remove="Images\stop.png" />
+    <None Remove="Images\table_add.png" />
+    <None Remove="Images\wrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Remove="MainWindow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="WindowsFormsIntegration">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DrawingListUC\DrawingListUC.csproj">
-      <Project>{26255202-2F69-4247-B7D4-17F51D61637C}</Project>
-      <Name>DrawingListUC</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\DrawingListUC\DrawingListUC.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="cog.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\script-add.png" />
-    <Resource Include="Images\script-save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\script-new.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\add.png" />
-    <Resource Include="Images\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\folder_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\stop.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\wrench.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\cog.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\checked-unchecked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\table_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\script-go-checked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\script-go-selected.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\script-go-failed.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\help.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -189,14 +100,22 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\add.png" />
+    <Resource Include="Images\checked-unchecked.png" />
+    <Resource Include="Images\cog.png" />
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\folder_add.png" />
+    <Resource Include="Images\help.png" />
     <Resource Include="Images\magic_wand_2.png" />
+    <Resource Include="Images\script-add.png" />
+    <Resource Include="Images\script-go-checked.png" />
+    <Resource Include="Images\script-go-failed.png" />
+    <Resource Include="Images\script-go-selected.png" />
+    <Resource Include="Images\script-new.png" />
+    <Resource Include="Images\script-save.png" />
+    <Resource Include="Images\smallcog.png" />
+    <Resource Include="Images\stop.png" />
+    <Resource Include="Images\table_add.png" />
+    <Resource Include="Images\wrench.png" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

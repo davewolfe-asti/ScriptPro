@@ -1,0 +1,125 @@
+﻿<Window x:Class="BatchProcessApp.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mcl="clr-namespace:DrawingListUC;assembly=DrawingListUC"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BatchProcessApp" xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon" Title="Script Pro 3.0"
+        mc:Ignorable="d" Height="Auto" Width="Auto" x:Name="wdwMain" Icon="pack://application:,,,/ScriptPro;component/Images/cog.png"
+        Loaded="wdwMain_Loaded"
+        Closing="wdwMain_Closing"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Ribbon x:Name="rbn" Grid.Row="0">
+            <RibbonTab x:Name="tbManage" Header="ScriptPro">
+                <ribbon:RibbonGroup Header="List">
+                    <ribbon:RibbonButton
+            x:Name="NewList"
+            Label="New"
+            LargeImageSource="pack://application:,,,/ScriptPro;component/Images/script-new.png"
+            Click="NewList_Click" />
+                    <ribbon:RibbonButton
+            x:Name="WizardList"
+            Label="Wizard"
+            LargeImageSource="pack://application:,,,/ScriptPro;component/Images/magic_wand_2.png"
+            Click="WizardList_Click" />
+                    <ribbon:RibbonButton
+            x:Name="LoadList"
+            Label="Load"
+            LargeImageSource="pack://application:,,,/ScriptPro;component/Images/script-add.png"
+            Click="LoadList_Click" />
+                    <ribbon:RibbonButton
+            x:Name="SaveList"
+            Label="Save"
+            LargeImageSource="pack://application:,,,/ScriptPro;component/Images/script-save.png"
+            Click="SaveList_Click" />
+                    <ribbon:RibbonButton
+            x:Name="SaveAsList"
+            Label="Save As"
+            LargeImageSource="pack://application:,,,/ScriptPro;component/Images/script-save.png"
+            Click="SaveAsList_Click" />
+                    <ribbon:RibbonButton
+            x:Name="LoadSCP"
+            Label="Load SCP Project"
+            LargeImageSource="pack://application:,,,/ScriptPro;component/Images/table_add.png"
+            Click="LoadSCP_Click" />
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup x:Name="Group1" Header="Drawing files">
+                    <ribbon:RibbonButton x:Name="AddDWGFile" LargeImageSource="pack://application:,,,/ScriptPro;component/Images/add.png" Label="Add" Click="AddDWGFile_Click"/>
+                    <ribbon:RibbonButton
+            x:Name="AddDWGFolder"
+            Label="Add From Folder"
+            LargeImageSource="/ScriptPro;component/Images/folder_add.png"
+            Click="AddDWGFolder_Click"/>
+                    <ribbon:RibbonButton
+            x:Name="RemoveDWG"
+            Label="Remove"
+            LargeImageSource="/ScriptPro;component/Images/Delete.png"
+            Click="RemoveDWG_Click"/>
+                    <ribbon:RibbonButton
+            x:Name="SkipDWG"
+            Label="Check/Uncheck"
+            LargeImageSource="/ScriptPro;component/Images/checked-unchecked.png"
+            Click="SkipDWG_Click" />
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Run">
+                    <ribbon:RibbonButton
+            x:Name="RunChecked"
+            Label="Checked"
+            LargeImageSource="/ScriptPro;component/Images/script-go-checked.png"
+            Click="RunChecked_Click" />
+                    <ribbon:RibbonButton
+            x:Name="RunSelected"
+            Label="Selected"
+            LargeImageSource="/ScriptPro;component/Images/script-go-selected.png"
+            Click="RunSelected_Click" />
+                    <ribbon:RibbonButton
+            x:Name="RunFailed"
+            Label="Failed"
+            LargeImageSource="/ScriptPro;component/Images/script-go-failed.png"
+            Click="RunFailed_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Stop">
+                    <ribbon:RibbonButton
+            x:Name="StopProcess"
+            Label="Stop"
+            LargeImageSource="/ScriptPro;component/Images/stop.png"
+            Click="StopProcess_Click" />
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Options">
+                    <ribbon:RibbonButton
+            x:Name="ProcessOptions"
+            Label="Settings"
+            LargeImageSource="/ScriptPro;component/Images/wrench.png"
+            Click="ProcessOptions_Click" />
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="Help">
+                    <ribbon:RibbonButton
+            x:Name="ProcessHelp"
+            Label="Help"
+            LargeImageSource="/ScriptPro;component/Images/Help.png"
+            Click="ProcessHelp_Click"/>
+                </ribbon:RibbonGroup>
+            </RibbonTab>
+            <RibbonApplicationMenu Visibility="Collapsed"/>
+        </Ribbon>
+        <DockPanel
+   Grid.Row="1"
+   Height="Auto"
+   HorizontalAlignment="Stretch"
+   Margin="12,10,0,0"
+   Name="dockPanel1"
+   VerticalAlignment="Stretch"
+   Width="Auto">
+            <WindowsFormsHost 
+     Name="FormUserControl"
+     DockPanel.Dock="Bottom">
+                <mcl:DrawingListControl x:Name="DWGControl"/>
+            </WindowsFormsHost>
+        </DockPanel>
+    </Grid>
+</Window>

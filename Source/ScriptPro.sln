@@ -1,9 +1,11 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawingListUC", "DrawingListUC\DrawingListUC.csproj", "{26255202-2F69-4247-B7D4-17F51D61637C}"
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawingListUC", "DrawingListUC\DrawingListUC.csproj", "{26255202-2F69-4247-B7D4-17F51D61637C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchProcessApp", "BatchProcessApp\BatchProcessApp.csproj", "{5DED7800-5F14-4EF6-96AA-17C2599F0398}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BatchProcessApp", "BatchProcessApp\BatchProcessApp.csproj", "{5DED7800-5F14-4EF6-96AA-17C2599F0398}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {124C7C7A-759A-4A17-B542-7381EE0EB7B2}
 	EndGlobalSection
 EndGlobal
